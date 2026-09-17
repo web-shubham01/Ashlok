@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASLOK WORLD CALCULATION | High-Precision Computational Studio & Code Workbench</title>
+  <meta name="description" content="ASLOK WORLD CALCULATION - Interactive computational studio, 2D & 3D geometry workbench, financial math engines, and Python 3.12 code lab.">
+  <meta name="theme-color" content="#050813">
+  <meta name="keywords" content="Aslok World Calculation, math suite, python practice lab, geometry workbench, financial math, algorithms">
+  <meta name="author" content="Aslok World Calculation">
+  
+  <!-- Premium Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6.5.1 Pro Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Design Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-prism">
+
+  <!-- Interactive Constellation Canvas Backdrop -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Bioluminescent Glow Orbs -->
+  <div class="ambient-glow-orb orb-1"></div>
+  <div class="ambient-glow-orb orb-2"></div>
+
+  <div class="app-container">
+    
+    <!-- Modern Sticky Navigation Bar -->
+    <header class="navbar">
+      <a href="#" class="brand-logo" aria-label="Aslok World Calculation Home">
+        <div class="logo-icon-wrap">
+          <div class="logo-gem">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+        </div>
+        <div class="logo-text-col">
+          <span class="brand-title">ASLOK<span class="accent-span"> WORLD</span></span>
+          <span class="brand-subtitle">CALCULATION LAB</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <!-- 4-Theme Prism Selector -->
+        <div class="theme-selector-box" title="Select Color Theme">
+          <span>THEME</span>
+          <div class="theme-pill prism active" data-theme="theme-prism" title="Prism Void (Electric Cyan)"></div>
+          <div class="theme-pill solar" data-theme="theme-solar" title="Solar Gold (Cyber Amber)"></div>
+          <div class="theme-pill emerald" data-theme="theme-emerald" title="Emerald Matrix (Quantum Mint)"></div>
+          <div class="theme-pill aurora" data-theme="theme-aurora" title="Aurora Sunset (Neon Magenta)"></div>
+        </div>
+
+        <!-- Audio Haptic Sound Effects Toggle -->
+        <button id="btn-toggle-sound" class="nav-btn active" title="Toggle UI Sound Effects" aria-label="Toggle Sound">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Calculation History Drawer Toggle -->
+        <button id="btn-open-history" class="nav-btn" title="View Calculation History" aria-label="Open History">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span class="btn-history-badge" id="history-count-badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Elevated Hero Section -->
+    <section class="hero-section">
+      <div class="hero-pill-badge">
+        <span class="pulse-dot"></span> ASLOK WORLD CALCULATION &bull; COMPUTATIONAL STUDIO
+      </div>
+      <h1 class="hero-heading">
+        High-Precision <span class="grad-text">Math Engines</span> &amp; Live Python Simulation
+      </h1>
+      <p class="hero-subtitle">
+        Execute real-time spatial calculations, interactive geometry visualizers, financial math models, and export clean, production-ready Python 3.12 source code instantly.
+      </p>
+
+      <!-- Live Engines Stats Bar -->
+      <div class="hero-stats-bar">
+        <div class="stat-chip"><i class="fa-solid fa-microchip"></i> 12 Live Computational Engines</div>
+        <div class="stat-chip"><i class="fa-brands fa-python"></i> Python 3.12 Ready</div>
+        <div class="stat-chip"><i class="fa-solid fa-bolt"></i> 100% Client-Side Speed</div>
+        <div class="stat-chip"><i class="fa-solid fa-shield-halved"></i> Zero External Dependencies</div>
+      </div>
+    </section>
+
+    <!-- Command-Palette Search & Filter Controls -->
+    <section class="controls-bar">
+      <div class="search-command-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+        <input type="text" id="global-search" class="search-input-command" placeholder="Search engines, 2D/3D geometry, financial math, algorithms..." autocomplete="off">
+        <span class="search-shortcut-badge">Ctrl + K</span>
+      </div>
+
+      <div class="category-filter-row">
+        <button class="cat-pill active" data-category="all">
+          <i class="fa-solid fa-border-all"></i> All Engines <span class="cat-count">12</span>
+        </button>
+        <button class="cat-pill" data-category="math">
+          <i class="fa-solid fa-calculator"></i> Math &amp; Algebra <span class="cat-count">3</span>
+        </button>
+        <button class="cat-pill" data-category="geometry">
+          <i class="fa-solid fa-draw-polygon"></i> 2D &amp; 3D Geometry <span class="cat-count">3</span>
+        </button>
+        <button class="cat-pill" data-category="finance">
+          <i class="fa-solid fa-chart-line"></i> Finance &amp; Savings <span class="cat-count">2</span>
+        </button>
+        <button class="cat-pill" data-category="academic">
+          <i class="fa-solid fa-graduation-cap"></i> Academic &amp; GPA <span class="cat-count">1</span>
+        </button>
+        <button class="cat-pill" data-category="studio">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Studio &amp; Patterns <span class="cat-count">3</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- The 12 Computational Tool Cards Grid -->
+    <main class="tools-showcase-grid" id="tools-grid">
+
+      <!-- TOOL 1: Identity Profile Studio -->
+      <article class="tool-card" data-category="studio">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-id-card"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Identity Profile Studio</span>
+              <span class="tool-cat-tag">Studio &amp; Developer</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Full Name</label>
+                <input type="text" id="prof-name" class="input-field" value="Aslok Kumar">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Role / Specialization</label>
+                <input type="text" id="prof-role" class="input-field" value="Math &amp; Software Engineer">
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Age</label>
+                <input type="number" id="prof-age" class="input-field" value="23">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Primary Stack</label>
+                <input type="text" id="prof-stack" class="input-field" value="Python, PyTorch, C++">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.generateProfile()">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Build Identity Badge
+            </button>
+            <div class="result-display-box" id="prof-result">
+              <div class="result-breakdown-text">Click generate to render formatted badge.</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> profile_studio.py</div>
+                <button class="btn-code-copy" data-target="prof-code" onclick="window.app.copyCode('prof-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="prof-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 2: Visual ASCII & Star Pattern Lab -->
+      <article class="tool-card" data-category="studio">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-shapes"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Visual Pattern Lab</span>
+              <span class="tool-cat-tag">Algorithms</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Pattern Type</label>
+                <select id="pat-type" class="select-field">
+                  <option value="increasing">Increasing Star Pyramid</option>
+                  <option value="decreasing">Decreasing Star Inverted</option>
+                  <option value="diamond">Symmetrical Star Diamond</option>
+                  <option value="numbers">Sequential Number Pyramid</option>
+                </select>
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Rows (1-15)</label>
+                <input type="number" id="pat-rows" class="input-field" value="6" min="1" max="15">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.generatePattern()">
+              <i class="fa-solid fa-play"></i> Generate Pattern
+            </button>
+            <div class="result-display-box">
+              <pre class="pre-formatted-code" id="pat-result">*
+**
+***
+****
+*****
+******</pre>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> pattern_generator.py</div>
+                <button class="btn-code-copy" data-target="pat-code" onclick="window.app.copyCode('pat-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="pat-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 3: Exponent & Power Matrix -->
+      <article class="tool-card" data-category="math">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-superscript"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Exponent &amp; Power Matrix</span>
+              <span class="tool-cat-tag">Math &amp; Algebra</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Base Number (N)</label>
+                <input type="number" id="pow-base" class="input-field" value="12" oninput="window.app.calcPower()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Exponent (k)</label>
+                <input type="number" id="pow-exp" class="input-field" value="2" oninput="window.app.calcPower()">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.calcPower()">
+              <i class="fa-solid fa-bolt"></i> Compute Matrix
+            </button>
+            <div class="result-display-box" id="pow-result">
+              <div class="result-hero-metric">12² = 144</div>
+              <div class="result-breakdown-text">Square: 144 &bull; Cube: 1,728 &bull; √12: 3.464</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> power_matrix.py</div>
+                <button class="btn-code-copy" data-target="pow-code" onclick="window.app.copyCode('pow-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="pow-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 4: Multi-Operand Math Suite -->
+      <article class="tool-card" data-category="math">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-calculator"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Multi-Operand Math Suite</span>
+              <span class="tool-cat-tag">Math &amp; Algebra</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Number A</label>
+                <input type="number" id="sum-a" class="input-field" value="45" oninput="window.app.calcSumSuite()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Number B</label>
+                <input type="number" id="sum-b" class="input-field" value="25" oninput="window.app.calcSumSuite()">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.calcSumSuite()">
+              <i class="fa-solid fa-equals"></i> Compute Suite
+            </button>
+            <div class="result-display-box" id="sum-result">
+              <div class="result-hero-metric">Sum: 70</div>
+              <div class="result-breakdown-text">Diff: 20 &bull; Product: 1,125 &bull; Quotient: 1.800 &bull; Mod: 20</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> math_suite.py</div>
+                <button class="btn-code-copy" data-target="sum-code" onclick="window.app.copyCode('sum-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="sum-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 5: Spatial Length Converter -->
+      <article class="tool-card" data-category="math">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-ruler-combined"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Spatial Length Engine</span>
+              <span class="tool-cat-tag">Units &amp; Metrics</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Value</label>
+                <input type="number" id="len-val" class="input-field" value="5" oninput="window.app.convertLength()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">From Unit</label>
+                <select id="len-from" class="select-field" onchange="window.app.convertLength()">
+                  <option value="km">Kilometers (km)</option>
+                  <option value="m">Meters (m)</option>
+                  <option value="cm">Centimeters (cm)</option>
+                  <option value="miles">Miles (mi)</option>
+                  <option value="feet">Feet (ft)</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.convertLength()">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i> Convert Metrics
+            </button>
+            <div class="result-display-box" id="len-result">
+              <div class="result-hero-metric">5,000 Meters</div>
+              <div class="result-breakdown-text">5.0000 Km &bull; 3.1069 Miles &bull; 16,404.20 Feet &bull; 500,000 cm</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> length_converter.py</div>
+                <button class="btn-code-copy" data-target="len-code" onclick="window.app.copyCode('len-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="len-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 6: Multiplication Matrix Studio -->
+      <article class="tool-card" data-category="math">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-table-cells"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Multiplication Matrix</span>
+              <span class="tool-cat-tag">Math &amp; Algebra</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Base Number</label>
+                <input type="number" id="tbl-num" class="input-field" value="8" oninput="window.app.generateTable()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Limit (1-20)</label>
+                <input type="number" id="tbl-limit" class="input-field" value="10" max="20" min="1" oninput="window.app.generateTable()">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.generateTable()">
+              <i class="fa-solid fa-table"></i> Build Matrix
+            </button>
+            <div class="result-display-box">
+              <pre class="pre-formatted-code" id="tbl-result">8 x 1 = 8
+8 x 2 = 16
+8 x 3 = 24
+8 x 4 = 32
+8 x 5 = 40
+8 x 6 = 48
+8 x 7 = 56
+8 x 8 = 64
+8 x 9 = 72
+8 x 10 = 80</pre>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> multiplication_table.py</div>
+                <button class="btn-code-copy" data-target="tbl-code" onclick="window.app.copyCode('tbl-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="tbl-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 7: Financial Growth Engine -->
+      <article class="tool-card" data-category="finance">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Financial Growth Engine</span>
+              <span class="tool-cat-tag">Finance &amp; Wealth</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Principal ($ / ₹)</label>
+                <input type="number" id="si-p" class="input-field" value="10000" oninput="window.app.calcInterest()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Rate (% p.a.)</label>
+                <input type="number" id="si-r" class="input-field" value="7.5" step="0.1" oninput="window.app.calcInterest()">
+              </div>
+            </div>
+            <div class="form-field-group">
+              <label class="input-label">Duration (Years)</label>
+              <input type="number" id="si-t" class="input-field" value="3" oninput="window.app.calcInterest()">
+            </div>
+            <button class="btn-action-primary" onclick="window.app.calcInterest()">
+              <i class="fa-solid fa-coins"></i> Calculate Growth
+            </button>
+            <div class="result-display-box" id="si-result">
+              <div class="result-hero-metric">Interest: $2,250.00</div>
+              <div class="result-breakdown-text">Principal: $10,000 &bull; Rate: 7.5% &bull; Total Return: $12,250.00</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> interest_engine.py</div>
+                <button class="btn-code-copy" data-target="si-code" onclick="window.app.copyCode('si-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="si-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 8: 2D Geometry: Rectangle Workbench -->
+      <article class="tool-card" data-category="geometry">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-vector-square"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Rectangle Workbench</span>
+              <span class="tool-cat-tag">2D Geometry</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Length (L)</label>
+                <input type="number" id="rect-l" class="input-field" value="16" oninput="window.app.calcRectangle()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Width (W)</label>
+                <input type="number" id="rect-w" class="input-field" value="10" oninput="window.app.calcRectangle()">
+              </div>
+            </div>
+
+            <!-- Dynamic Blueprint SVG Canvas -->
+            <div class="blueprint-visualizer">
+              <svg id="rect-svg" class="blueprint-svg" viewBox="0 0 200 110">
+                <rect id="svg-rect-shape" x="30" y="15" width="140" height="80" fill="rgba(0, 242, 254, 0.15)" stroke="#00f2fe" stroke-width="2" rx="6" />
+                <text id="svg-rect-text" x="100" y="60" fill="#ffffff" font-size="12" text-anchor="middle" font-weight="700" font-family="'JetBrains Mono', monospace">16 × 10</text>
+              </svg>
+            </div>
+
+            <div class="result-display-box" id="rect-result">
+              <div class="result-hero-metric">Area: 160 sq units</div>
+              <div class="result-breakdown-text">Perimeter: 52 &bull; Diagonal: 18.87</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> rectangle_workbench.py</div>
+                <button class="btn-code-copy" data-target="rect-code" onclick="window.app.copyCode('rect-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="rect-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 9: 2D Geometry: Triangle Workbench -->
+      <article class="tool-card" data-category="geometry">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-play fa-rotate-270"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Triangle Workbench</span>
+              <span class="tool-cat-tag">2D Geometry</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Base (b)</label>
+                <input type="number" id="tri-b" class="input-field" value="14" oninput="window.app.calcTriangle()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Height (h)</label>
+                <input type="number" id="tri-h" class="input-field" value="10" oninput="window.app.calcTriangle()">
+              </div>
+            </div>
+
+            <!-- Dynamic Blueprint SVG Visualizer -->
+            <div class="blueprint-visualizer">
+              <svg id="tri-svg" class="blueprint-svg" viewBox="0 0 200 110">
+                <polygon points="30,95 170,95 100,15" fill="rgba(128, 0, 255, 0.16)" stroke="#8000ff" stroke-width="2" />
+                <line x1="100" y1="15" x2="100" y2="95" stroke="rgba(0, 242, 254, 0.5)" stroke-dasharray="3,3" stroke-width="1.5" />
+                <text id="svg-tri-text" x="100" y="65" fill="#ffffff" font-size="12" text-anchor="middle" font-weight="700" font-family="'JetBrains Mono', monospace">Area = 70</text>
+              </svg>
+            </div>
+
+            <div class="result-display-box" id="tri-result">
+              <div class="result-hero-metric">Area: 70 sq units</div>
+              <div class="result-breakdown-text">Formula: ½ × Base (14) × Height (10)</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> triangle_workbench.py</div>
+                <button class="btn-code-copy" data-target="tri-code" onclick="window.app.copyCode('tri-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="tri-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 10: Academic Grade & GPA Analytics -->
+      <article class="tool-card" data-category="academic">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Academic Grade Analytics</span>
+              <span class="tool-cat-tag">Academic &amp; GPA</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div id="subject-list" style="display:flex; flex-direction:column; gap:0.6rem;">
+              <div class="subject-row" style="display:flex; gap:0.6rem; align-items:center;">
+                <input type="text" class="input-field sub-name" value="Python Architecture" style="flex:2;">
+                <input type="number" class="input-field sub-marks" value="94" placeholder="Marks" style="flex:1;" oninput="window.app.calcGrades()">
+              </div>
+              <div class="subject-row" style="display:flex; gap:0.6rem; align-items:center;">
+                <input type="text" class="input-field sub-name" value="Linear Algebra" style="flex:2;">
+                <input type="number" class="input-field sub-marks" value="88" placeholder="Marks" style="flex:1;" oninput="window.app.calcGrades()">
+              </div>
+              <div class="subject-row" style="display:flex; gap:0.6rem; align-items:center;">
+                <input type="text" class="input-field sub-name" value="Discrete Math" style="flex:2;">
+                <input type="number" class="input-field sub-marks" value="90" placeholder="Marks" style="flex:1;" oninput="window.app.calcGrades()">
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.6rem; margin-top:0.3rem;">
+              <button class="btn-action-secondary" style="flex:1" onclick="window.app.addSubjectRow()">
+                <i class="fa-solid fa-plus"></i> Add Subject
+              </button>
+              <button class="btn-action-primary" style="flex:2" onclick="window.app.calcGrades()">
+                <i class="fa-solid fa-calculator"></i> Compute GPA
+              </button>
+            </div>
+
+            <div class="result-display-box" id="grade-result">
+              <div class="result-hero-metric">90.67% (Grade: A+)</div>
+              <div class="result-breakdown-text">Status: <strong>PASSED (DISTINCTION)</strong> &bull; Estimated GPA: <strong>4.0 / 4.0</strong> (3 Subjects)</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> gpa_analytics.py</div>
+                <button class="btn-code-copy" data-target="grade-code" onclick="window.app.copyCode('grade-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="grade-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 11: Commercial Savings Engine -->
+      <article class="tool-card" data-category="finance">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-tags"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">Commercial Savings Engine</span>
+              <span class="tool-cat-tag">Finance &amp; Commerce</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Original Price ($ / ₹)</label>
+                <input type="number" id="disc-price" class="input-field" value="499" oninput="window.app.calcDiscount()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Discount Rate (%)</label>
+                <input type="number" id="disc-rate" class="input-field" value="20" oninput="window.app.calcDiscount()">
+              </div>
+            </div>
+            <button class="btn-action-primary" onclick="window.app.calcDiscount()">
+              <i class="fa-solid fa-percent"></i> Calculate Savings
+            </button>
+            <div class="result-display-box" id="disc-result">
+              <div class="result-hero-metric">Final Price: $399.20</div>
+              <div class="result-breakdown-text">Original: $499.00 &bull; Discount: 20% &bull; You Save: $99.80</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> savings_discount.py</div>
+                <button class="btn-code-copy" data-target="disc-code" onclick="window.app.copyCode('disc-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="disc-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOOL 12: 3D Spatial Geometry: Cuboid Engine -->
+      <article class="tool-card" data-category="geometry">
+        <div class="tool-card-header">
+          <div class="tool-info-group">
+            <div class="tool-avatar"><i class="fa-solid fa-cube"></i></div>
+            <div class="tool-meta">
+              <span class="tool-name-title">3D Cuboid Spatial Engine</span>
+              <span class="tool-cat-tag">3D Geometry</span>
+            </div>
+          </div>
+          <div class="tool-tab-pill-box">
+            <button class="card-tab-btn active" data-tab="calc"><i class="fa-solid fa-sliders"></i> Tool</button>
+            <button class="card-tab-btn" data-tab="code"><i class="fa-brands fa-python"></i> Python</button>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <div class="tab-pane calc-pane">
+            <div class="form-grid-2">
+              <div class="form-field-group">
+                <label class="input-label">Length (L)</label>
+                <input type="number" id="cub-l" class="input-field" value="10" oninput="window.app.calcCuboid()">
+              </div>
+              <div class="form-field-group">
+                <label class="input-label">Width (W)</label>
+                <input type="number" id="cub-w" class="input-field" value="6" oninput="window.app.calcCuboid()">
+              </div>
+            </div>
+            <div class="form-field-group">
+              <label class="input-label">Height (H)</label>
+              <input type="number" id="cub-h" class="input-field" value="8" oninput="window.app.calcCuboid()">
+            </div>
+
+            <!-- Interactive CSS 3D Cuboid Space -->
+            <div class="cuboid-stage">
+              <div class="cuboid-3d-model" id="cuboid-model">
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: translateZ(30px);"></div>
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: rotateY(180deg) translateZ(30px);"></div>
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: rotateY(90deg) translateZ(30px);"></div>
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: rotateY(-90deg) translateZ(30px);"></div>
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: rotateX(90deg) translateZ(30px);"></div>
+                <div class="cuboid-face-plane" style="width:60px; height:60px; transform: rotateX(-90deg) translateZ(30px);"></div>
+              </div>
+            </div>
+
+            <div class="result-display-box" id="cub-result">
+              <div class="result-hero-metric">Volume: 480 cu units</div>
+              <div class="result-breakdown-text">Surface Area: 376 sq units &bull; Space Diagonal: 14.14</div>
+            </div>
+          </div>
+
+          <div class="tab-pane code-pane hidden">
+            <div class="code-tab-frame">
+              <div class="code-tab-topbar">
+                <div class="mac-window-dots"><span class="mac-dot close"></span><span class="mac-dot min"></span><span class="mac-dot max"></span></div>
+                <div class="code-file-tag"><i class="fa-brands fa-python"></i> cuboid_spatial.py</div>
+                <button class="btn-code-copy" data-target="cub-code" onclick="window.app.copyCode('cub-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <pre class="code-content-view" id="cub-code"></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Calculation History Slide-in Drawer Modal -->
+    <div class="drawer-modal-backdrop" id="history-backdrop">
+      <aside class="drawer-content-panel">
+        <div class="drawer-header-row">
+          <h2 class="drawer-title-h2">
+            <i class="fa-solid fa-clock-rotate-left"></i> History Log
+          </h2>
+          <button id="btn-close-history" class="nav-btn" title="Close Drawer" aria-label="Close History">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="history-scroll-list" id="history-list"></div>
+        <button class="btn-action-secondary" style="width:100%; margin-top:1rem;" onclick="window.app.clearHistory()">
+          <i class="fa-solid fa-trash-can"></i> Clear History
+        </button>
+      </aside>
+    </div>
+
+    <!-- Modern App Footer -->
+    <footer class="app-footer">
+      <div class="footer-inner-box">
+        <div class="footer-brand-title">
+          ASLOK WORLD CALCULATION &bull; COMPUTATIONAL STUDIO
+        </div>
+        <p class="footer-desc">
+          Engineered with Pure HTML5, Modern CSS3 &amp; Vanilla JavaScript. Fast, zero-dependency, high-precision mathematical suite and live Python 3.12 simulation studio.
+        </p>
+        <div class="footer-nav-links">
+          <a href="#" class="footer-link-item">Documentation</a>
+          <a href="#" class="footer-link-item">Python Workbench</a>
+          <a href="#" class="footer-link-item">Computational Engines</a>
+          <a href="#" class="footer-link-item">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-stack" class="toast-stack"></div>
+
+  <!-- Application Engine Script -->
+  <script src="app.js"></script>
+</body>
+</html>
